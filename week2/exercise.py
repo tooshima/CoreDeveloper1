@@ -21,20 +21,25 @@ def find_specific_value_in_list(find_value, input_list):
 # FUNCTION 2: Pick out even numbers
 
 
-def evenStevens(thing):
-    thanos = []
-    for avenger in thing:
-        if (avenger % 2) == 0:
-            thanos.append(avenger)
-    print("I AM INEVITABLE")
-    print(thanos)
-    return thanos
+def pick_out_even_numbers(input_list):
+    even_number_list = []
+
+    for number in input_list:
+        if (number % 2) == 0:
+            even_number_list.append(number)
+
+    print(even_number_list)
+    return even_number_list
 
 
 if __name__ == "__main__":
+    # FUNCTION 1 test
     target_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     find_value = 1
     find_specific_value_in_list(find_value, target_list)
 
     find_value = 100
     find_specific_value_in_list(find_value, target_list)
+
+    # FUNCTION2 test
+    pick_out_even_numbers(target_list)
