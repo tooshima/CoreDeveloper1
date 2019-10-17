@@ -12,35 +12,42 @@
 class FizzBuzz:
     def __init__(self):
         self._check_number = 0
-        self._output_string = ''
+        self._output_string = 'Fizz Buzz'
 
-    def set_number(self, check_number):
+    def set_number(self, check_number: int):
         self._set_check_number(check_number)
-        self._check_fizz_buzz_conditions()
+        self._decide_fizz_buzz_result()
 
-    def get_result(self):
+    def get_result(self) -> str:
         return self._output_string
 
     def _set_check_number(self, check_number):
         self._check_number = check_number
-        self._output_string = check_number
 
-    def _check_fizz_buzz_conditions(self):
-        self._check_fizz()
-        self._check_buzz()
-        self._check_fizz_buzz()
+    def _decide_fizz_buzz_result(self):
+        if self._check_fizz_buzz():
+            self._output_string = "Fizz Buzz"
+        elif self._check_fizz():
+            self._output_string = "Fizz"
+        elif self._check_buzz():
+            self._output_string = "Buzz"
+        else:
+            self._output_string = self._check_number
 
     def _check_fizz(self):
         if self._check_number % 3 == 0:
-            self._output_string = "Fizz"
+            return True
+        return False
 
     def _check_buzz(self):
         if self._check_number % 5 == 0:
-            self._output_string = "Buzz"
+            return True
+        return False
 
     def _check_fizz_buzz(self):
         if self._check_number % 15 == 0:
-            self._output_string = "Fizz Buzz"
+            return True
+        return False
 
 
 MAX_NUMBER = 101
